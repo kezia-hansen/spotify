@@ -1,5 +1,6 @@
 ---
 import "../styles/style.css";
+import Nav from "../components/Nav.astro";
 import Playbox_container from "../components/Playbox_container.astro";
 import Playbox from "../components/Playbox.astro";
 ---
@@ -13,6 +14,7 @@ import Playbox from "../components/Playbox.astro";
     <title>Home</title>
   </head>
   <body>
+    <Nav />
     <main>
       <Playbox_container title="Spotify-playlister">
         <Playbox img="https://i.pinimg.com/564x/00/c6/33/00c633c2c398e9f343af682f086e32f4.jpg" title="Today's Top Hits" text="Jungkook is top of the hottest 50" />
