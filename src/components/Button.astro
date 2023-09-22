@@ -1,0 +1,49 @@
+---
+const { variant = "primary", size = "medium" } = Astro.props;
+---
+
+<button data-variant={variant} data-size={size}>
+  <slot />
+</button>
+
+<style>
+  button:hover {
+    scale: 1.04;
+  }
+
+  /* Variants */
+  [data-variant="primary"] {
+    background: white;
+    color: black;
+  }
+
+  [data-variant="secondary"] {
+    color: white;
+    border: 1px solid #818181;
+  }
+
+  [data-variant="tertiary"] {
+    color: #818181;
+  }
+  [data-variant="tertiary"]:hover {
+    color: white;
+  }
+
+  [data-variant="tertiary"]:has(+ [data-variant="primary"]) {
+    padding-inline: 00.5rem 2rem;
+  }
+
+  /* Sizes */
+  [data-size="medium"] {
+    font-size: 1rem;
+    min-height: 3rem;
+    padding-block: 00.5rem;
+    padding-inline: 2rem;
+  }
+  [data-size="small"] {
+    font-size: 0.875rem;
+    min-height: 2rem;
+    padding-block: 0.25rem;
+    padding-inline: 1rem;
+  }
+</style>
