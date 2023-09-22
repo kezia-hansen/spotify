@@ -42,11 +42,11 @@ const { title } = Astro.props;
 
   .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
     /* hide wrapping rows */
-    grid-template-rows: 1fr;
+    grid-template-rows: min-content;
     grid-auto-rows: 0;
-    gap: 1em;
+    gap: 0 1em;
     overflow: hidden;
   }
 </style>

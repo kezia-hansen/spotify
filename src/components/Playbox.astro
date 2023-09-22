@@ -4,11 +4,13 @@ const { title, img, text } = Astro.props;
 
 <li>
   <article>
-    <h2>
+    <h3>
       <a href="#0">{title}</a>
-    </h2>
+    </h3>
     <figure>
-      <img src={img} alt="" height="350" width="350" />
+      <div class="image-container">
+        <img src={img} alt="" />
+      </div>
       <button class="play-btn">
         <svg viewBox="0 0 24 24"><path d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"></path></svg>
       </button>
@@ -25,7 +27,7 @@ const { title, img, text } = Astro.props;
     position: relative;
     display: flex;
     flex-direction: column;
-    padding: 3rem;
+    padding: 2rem;
     background: #181818;
     border-radius: 0.5rem;
   }
@@ -34,11 +36,11 @@ const { title, img, text } = Astro.props;
     background: #282828;
   }
 
-  h2 {
+  h3 {
     margin-bottom: 0.25rem;
   }
 
-  h2 a {
+  h3 a {
     color: inherit;
   }
 
@@ -63,6 +65,7 @@ const { title, img, text } = Astro.props;
     order: -1;
     margin-bottom: 1rem;
     color: white;
+    text-align: center;
   }
 
   figure > * {
