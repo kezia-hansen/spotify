@@ -22,14 +22,12 @@ const { title, img, text } = Astro.props;
 
 <style>
   article {
-    background-color: aqua;
-    border-radius: 0.375rem;
-    padding: 1rem;
     position: relative;
-    text-align: center;
-    background: #181818;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    padding: 1rem;
+    background: #181818;
+    border-radius: 0.5rem;
     transition: background 0.3s ease;
   }
 
@@ -41,10 +39,22 @@ const { title, img, text } = Astro.props;
     margin-bottom: 0.25rem;
   }
 
+  h2 a {
+    color: inherit;
+  }
+
   a::before {
     content: "";
     inset: 0;
     position: absolute;
+  }
+
+  p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    color: rgb(129, 129, 129);
   }
   figure {
     display: grid;
@@ -60,26 +70,17 @@ const { title, img, text } = Astro.props;
   }
 
   img {
-    border-radius: 0.25rem;
+    border-radius: 0.5rem;
     box-shadow: 0 8px 24px hsl(0 0% 0% / 50%);
   }
 
-  p {
-    color: rgb(129, 129, 129);
-    /* text-align: left;
-    margin-left: 7%; */
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    overflow: hidden;
-  }
-
   .play-btn {
-    display: inline-grid;
     place-self: end;
+    display: inline-grid;
+    place-content: center;
     background-color: #22c24d;
     color: black;
-    border-radius: 1000px;
+    border-radius: 100%;
     inline-size: 3rem;
     block-size: 3rem;
     margin: 0.5rem;
@@ -103,21 +104,9 @@ const { title, img, text } = Astro.props;
   }
 
   svg {
-    width: 0.75rem;
-    height: 0.75rem;
+    width: 1rem;
+    height: 1rem;
     margin: 0.375rem;
     display: block;
   }
-
-  /*  path {
-    fill: rgb(34, 194, 77);
-  } */
-  /*   svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    padding: 0.5%;
-    margin: 2% 2%;
-  } */
 </style>
