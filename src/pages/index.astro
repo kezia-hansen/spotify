@@ -1,8 +1,7 @@
 ---
 import "../styles/style.css";
 import Playbox_container from "../components/Playbox_container.astro";
----
-
+import Playbox from "../components/Playbox.astro";
 ---
 
 <html lang="en">
@@ -11,11 +10,28 @@ import Playbox_container from "../components/Playbox_container.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>Home</title>
   </head>
   <body>
-    <Playbox_container>
-      <h1 slot="title">Spotify-playlister</h1>
+    <Playbox_container title="Spotify-playlister">
+      <!-- <Playbox title="Today's Top Hits" img="https://picsum.photos/id/68/150/150" text="Zach Bryan & Kacey Musgraves are on top of the Hottest 50!" /> -->
+      <Playbox img="https://picsum.photos/id/14/350/350.webp" title="Peaceful Piano" text="Relax and indulge with beautiful piano pieces" />
+      <Playbox img="https://picsum.photos/id/15/350/350.webp" title="Deep Focus" text="Keep calm and focus with ambient and post-rock music." />
+      <Playbox img="https://picsum.photos/id/16/350/350.webp" title="Peaceful Piano" text="Relax and indulge with beautiful piano pieces" />
+      <Playbox img="https://picsum.photos/id/17/350/350.webp" title="Peaceful Piano" text="Relax and indulge with beautiful piano pieces" />
+      <Playbox img="https://picsum.photos/id/11/350/350.webp" title="Peaceful Piano" text="Relax and indulge with beautiful piano pieces" />
+      <Playbox img="https://picsum.photos/id/12/350/350.webp" title="Peaceful Piano" text="Relax and indulge with beautiful piano pieces" />
+      <Playbox img="https://picsum.photos/id/13/350/350.webp" title="Peaceful Piano" text="Relax and indulge with beautiful piano pieces" />
+    </Playbox_container>
+
+    <Playbox_container title="Focus">
+      <Playbox img="https://picsum.photos/id/18/350/350.webp" title="Peaceful Piano" text="Relax and indulge with beautiful piano pieces" />
+      <Playbox img="https://picsum.photos/id/19/350/350.webp" title="Peaceful Piano" text="Relax and indulge with beautiful piano pieces" />
+      <Playbox img="https://picsum.photos/id/20/350/350.webp" title="Peaceful Piano" text="Relax and indulge with beautiful piano pieces" />
+      <Playbox img="https://picsum.photos/id/21/350/350.webp" title="Peaceful Piano" text="Relax and indulge with beautiful piano pieces" />
+      <Playbox img="https://picsum.photos/id/22/350/350.webp" title="Peaceful Piano" text="Relax and indulge with beautiful piano pieces" />
+      <Playbox img="https://picsum.photos/id/23/350/350.webp" title="Peaceful Piano" text="Relax and indulge with beautiful piano pieces" />
+      <Playbox img="https://picsum.photos/id/24/350/350.webp" title="Peaceful Piano" text="Relax and indulge with beautiful piano pieces" />
     </Playbox_container>
   </body>
 </html>
