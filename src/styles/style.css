@@ -65,3 +65,50 @@ button {
     border-radius: 1000px;
     transition: scale 33ms ease-in-out;
 }
+
+/* Search bar styles */
+.search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    background-color: #242424;
+    border-radius: 800px;
+    transition: background-color 0.3s;
+    color: #b3b2b2;
+    font-size: 0.875rem;
+    padding: 25px 20px 25px 48px;
+}
+
+.search:hover .search-input {
+    border: 2px solid #343434;
+    background-color: #2A2A2A;
+    transition: fill 0.3s;
+}
+
+.search-input:focus {
+    border: 2px solid white;
+}
+
+.search:hover .search-icon {
+    fill: white;
+    transition: fill 0.3s;
+}
+
+/* Search icon styles */
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    fill: #BEBEBE;
+    cursor: pointer;
+    transition: fill 0.3s;
+    height: 18px;
+    width: 18px;
+}

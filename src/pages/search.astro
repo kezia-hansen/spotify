@@ -1,0 +1,9 @@
+---
+import "../styles/style.css";
+import MainLayout from "../layouts/MainLayout.astro";
+const { hasSearch } = Astro.props;
+---
+
+<MainLayout hasSearch={true} title="Search">
+  <h2>Browse all</h2>
+</MainLayout>
