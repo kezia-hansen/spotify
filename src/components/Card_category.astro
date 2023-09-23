@@ -1,9 +1,9 @@
 ---
-const { title, img } = Astro.props;
+const { title, img, color } = Astro.props;
 ---
 
 <li>
-  <article>
+  <article style={{ backgroundColor: color }}>
     <h3>
       <a href="#0">{title}</a>
     </h3>
