@@ -1,0 +1,57 @@
+---
+const { title, img } = Astro.props;
+---
+
+<li>
+  <article>
+    <h3>
+      <a href="#0">{title}</a>
+    </h3>
+
+    <img src={img} alt="" />
+  </article>
+</li>
+
+<style>
+  article {
+    position: relative;
+    background-color: orange;
+    border-radius: 10px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+    box-shadow: -1px 3px 2px 0px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+    margin: 0;
+    margin-bottom: 0.25rem;
+  }
+
+  h3 a {
+    color: inherit;
+  }
+
+  img {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    bottom: 0;
+    right: 0;
+    transform: translate(20px, 7px) rotate(25deg);
+    z-index: 0;
+    box-shadow: -1px 3px 2px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  li {
+    list-style: none;
+  }
+</style>

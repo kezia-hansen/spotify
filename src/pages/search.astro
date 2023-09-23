@@ -1,9 +1,68 @@
 ---
 import "../styles/style.css";
 import MainLayout from "../layouts/MainLayout.astro";
+import Card from "../components/Card_category.astro";
 const { hasSearch } = Astro.props;
 ---
 
 <MainLayout hasSearch={true} title="Search">
   <h2>Browse all</h2>
+  <div class="card-container">
+    <Card title="Podcast" img="https://dissectpodcast.com/wp-content/uploads/2020/09/Avatar-Dissect-S7.jpg" />
+    <Card title="Made For You" img="https://i.pinimg.com/564x/00/c6/33/00c633c2c398e9f343af682f086e32f4.jpg" />
+    <Card title="Charts" img="https://charts-images.scdn.co/assets/locale_en/regional/weekly/region_global_default.jpg" />
+    <Card title="New Releases" img="https://i.scdn.co/image/ab67706c0000da8412b9ab142f1775de4c536583" />
+    <Card title="Discover" img="https://lineup-images.scdn.co/discocover_DEFAULT.jpg" />
+    <Card title="Live Events" img="https://i.insider.com/5e45b2783b62b778762710a4?width=700" />
+    <Card title="Pop" img="https://i.scdn.co/image/ab67706c0000da8481b02b2a589b6fd6284c1054" />
+    <Card title="Kpop" img="https://i.scdn.co/image/ab67706c0000da843bfde81c50a2828d7c454f2b" />
+    <Card title="Hip-Hop" img="https://i.scdn.co/image/ab67706c0000da8437cbf1e65f922c0626c5e980" />
+    <Card
+      title="Rock"
+      img="data:image/jpeg;base64,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lvIq57wLNuYgkErI4lwyrTJNQW/eFwe4jTuMLBaP6DmuidXiXeNs1pMXzYECxknrFtOikbaAeWxkQJnZW0CGug7kfT7KXN9RiTB00BB5ePoq1fD5t6oqwGoAtcjXWL9BoqCqWm0A/SR43KEAiTrGm5I99FGynOx6nb1U/lW276MxtIZcx6mNRyWDVdmMwBtZZmIqZG5YgnWeUDTz85WI5wAsLxc9I0UY/KeazpJ7d/yiKoiqQrsFFl4GJvMwYM2FjcrFQFLNxON1ZVEREQqVMMQQPODflHistzmZWkiSReDex6eV1DR+YwBlbckyYANjJVd79mnluN1L3Y76k7AWiAFGp6zWiwJIk7W11HNQwpjO731UXq9m8NnxDBs05j/puPWF5a2XsT/1X/5P+QUZXWNa+HxmXLjL8tyREXK+lEREBERAREQEREFHNBEESNwV59fg1Bxn4YadZb8p9LL0UUy2M8uPHL/Kba3V7KtkFlQiNnAE36iPZYmJ7PVmj5A02ghro9Hb+K29FPnrHLwnHd6mnOq+Crt+qk4dYJ9bhYfxXARoJvzXUUIV/U+zmv0/4yv9OWua8iSCQLTBjzUZ+5dWXnYngtB5l1NoPNstP8sSrTlnvGWf07P9t3+XOEXQR2bww/Ynvc78VcOz2F/w/wCZ/wD7KfVxUn07l+Y56rmsJMDXoujs4RQGlFniAfdZVKg1n0Ma3/KAPZReWfC+P03P91jm44bW1FJ5HPK78FVvDqunw3d+V34Lpaoq+rfhrPps+XPMVgq7jai+BYAMdHhZQfqqv/g1P9rvwXS0Sctnsm/Tsbd3Kuafqqv/AIVT/a78FKzguId/dPB6jL7wujInq34RPpuH+1c0qcMrB2U03ZuQBPkRqtn7KcMfTzPe0tJAa0HWNSSPLyK2QKgKjLktmmnD4HHjz8296VREWbvEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERB//2Q=="
+    />
+    <Card title="R&B" img="https://i.scdn.co/image/ab67706c0000da8443ed2645b02b295aa46e464e" />
+    <Card title="Latin" img="https://community.spotify.com/t5/image/serverpage/image-id/109757iE0CD2DE6E2BD1522/image-size/large?v=v2&px=999" />
+    <Card title="Afro" img="https://i.scdn.co/image/ab67706c0000da8465fa01e86a56fcb6b8191c67" />
+    <Card title="Lofi" img="https://i1.sndcdn.com/artworks-FY9Y8s2jys5piX0R-PxXykA-t500x500.jpg" />
+    <Card title="Anime" img="https://i.scdn.co/image/ab67706c0000da847b3f90bbd80ba5dd5538280c" />
+  </div>
 </MainLayout>
+
+<style>
+  body {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      "nav topbar"
+      "nav main"
+      "footer footer";
+    height: 100%;
+  }
+  :global(main) {
+    grid-area: main;
+  }
+  :global(nav) {
+    grid-area: nav;
+  }
+  :global(.topbar) {
+    grid-area: topbar;
+  }
+  :global(footer) {
+    grid-area: footer;
+  }
+
+  @media (width > 1000px) {
+    main {
+      padding: 1.5rem 2rem;
+    }
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: flex-start;
+  }
+</style>
