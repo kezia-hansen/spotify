@@ -3,27 +3,29 @@ import "../styles/style.css";
 import MainLayout from "../layouts/MainLayout.astro";
 import Card from "../components/Card_category.astro";
 const cardColors = ["#27856A", "#1E3264", "#7358FF", "#E8105B", "#8D67AB"];
+const badgeColors = ["#27856A", "#1E3264", "#7358FF", "#E8105B", "#8D67AB"];
 const { hasSearch } = Astro.props;
+const { newBadge } = Astro.props;
 ---
 
 <MainLayout hasSearch={true} title="Search">
   <h2>Browse all</h2>
   <div class="card-container">
-    <Card title="Podcast" img="https://dissectpodcast.com/wp-content/uploads/2020/09/Avatar-Dissect-S7.jpg" color={cardColors[0]} />
-    <Card title="Made For You" img="https://i.pinimg.com/564x/00/c6/33/00c633c2c398e9f343af682f086e32f4.jpg" color={cardColors[1]} />
-    <Card title="Charts" img="https://charts-images.scdn.co/assets/locale_en/regional/weekly/region_global_default.jpg" color={cardColors[2]} />
-    <Card title="New Releases" img="https://i.scdn.co/image/ab67706c0000da8412b9ab142f1775de4c536583" color={cardColors[3]} />
-    <Card title="Discover" img="https://lineup-images.scdn.co/discocover_DEFAULT.jpg" color={cardColors[4]} />
-    <Card title="Live Events" img="https://i.insider.com/5e45b2783b62b778762710a4?width=700" color={cardColors[4]} />
-    <Card title="Pop" img="https://i.scdn.co/image/ab67706c0000da8481b02b2a589b6fd6284c1054" color={cardColors[3]} />
-    <Card title="Kpop" img="https://i.scdn.co/image/ab67706c0000da843bfde81c50a2828d7c454f2b" color={cardColors[0]} />
-    <Card title="Hip-Hop" img="https://i.scdn.co/image/ab67706c0000da8437cbf1e65f922c0626c5e980" color={cardColors[2]} />
-    <Card title="Rock" img="https://omniaintellegohome.files.wordpress.com/2019/08/rock.jpg?w=880" color={cardColors[1]} />
+    <Card title="Podcast" img="https://dissectpodcast.com/wp-content/uploads/2020/09/Avatar-Dissect-S7.jpg" color={cardColors[0]} hasNewBadge={false} />
+    <Card title="Made For You" img="https://i.pinimg.com/564x/00/c6/33/00c633c2c398e9f343af682f086e32f4.jpg" color={cardColors[1]} hasNewBadge={true} color={badgeColors[1]} />
+    <Card title="Charts" img="https://charts-images.scdn.co/assets/locale_en/regional/weekly/region_global_default.jpg" color={cardColors[2]} hasNewBadge={false} />
+    <Card title="New Releases" img="https://i.scdn.co/image/ab67706c0000da8412b9ab142f1775de4c536583" color={cardColors[3]} hasNewBadge={true} />
+    <Card title="Discover" img="https://lineup-images.scdn.co/discocover_DEFAULT.jpg" color={cardColors[4]} hasNewBadge={false} />
+    <Card title="Live Events" img="https://i.insider.com/5e45b2783b62b778762710a4?width=700" color={cardColors[4]} hasNewBadge={true} />
+    <Card title="Pop" img="https://i.scdn.co/image/ab67706c0000da8481b02b2a589b6fd6284c1054" color={cardColors[3]} hasNewBadge={false} />
+    <Card title="Kpop" img="https://i.scdn.co/image/ab67706c0000da843bfde81c50a2828d7c454f2b" color={cardColors[0]} hasNewBadge={false} />
+    <Card title="Hip-Hop" img="https://i.scdn.co/image/ab67706c0000da8437cbf1e65f922c0626c5e980" color={cardColors[2]} hasNewBadge={false} />
+    <Card title="Rock" img="https://omniaintellegohome.files.wordpress.com/2019/08/rock.jpg?w=880" color={cardColors[1]} hasNewBadge={false} />
     <Card title="R&B" img="https://i.scdn.co/image/ab67706c0000da8443ed2645b02b295aa46e464e" color={cardColors[2]} />
-    <Card title="Latin" img="https://community.spotify.com/t5/image/serverpage/image-id/109757iE0CD2DE6E2BD1522/image-size/large?v=v2&px=999" color={cardColors[4]} />
-    <Card title="Afro" img="https://i.scdn.co/image/ab67706c0000da8465fa01e86a56fcb6b8191c67" color={cardColors[1]} />
-    <Card title="Lofi" img="https://i1.sndcdn.com/artworks-FY9Y8s2jys5piX0R-PxXykA-t500x500.jpg" color={cardColors[3]} />
-    <Card title="Anime" img="https://i.scdn.co/image/ab67706c0000da847b3f90bbd80ba5dd5538280c" color={cardColors[0]} />
+    <Card title="Latin" img="https://community.spotify.com/t5/image/serverpage/image-id/109757iE0CD2DE6E2BD1522/image-size/large?v=v2&px=999" color={cardColors[1]} hasNewBadge={false} />
+    <Card title="Afro" img="https://i.scdn.co/image/ab67706c0000da8465fa01e86a56fcb6b8191c67" color={cardColors[4]} hasNewBadge={false} />
+    <Card title="Lofi" img="https://i1.sndcdn.com/artworks-FY9Y8s2jys5piX0R-PxXykA-t500x500.jpg" color={cardColors[3]} hasNewBadge={false} />
+    <Card title="Anime" img="https://i.scdn.co/image/ab67706c0000da847b3f90bbd80ba5dd5538280c" color={cardColors[0]} hasNewBadge={false} />
   </div>
 </MainLayout>
 
@@ -60,7 +62,8 @@ const { hasSearch } = Astro.props;
   .card-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
-    justify-content: flex-start;
+    justify-content: center;
+    position: relative;
+    gap: 30px;
   }
 </style>
