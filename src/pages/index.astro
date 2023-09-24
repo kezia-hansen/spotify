@@ -5,25 +5,44 @@ import Playbox_container from "../components/Playbox_container.astro";
 import Playbox from "../components/Playbox.astro";
 ---
 
+<!--
+Importér CSS-stilarket
+Importér MainLayout fra ../layouts/MainLayout.astro
+Importér Playbox_container og Playbox fra ../components
+
+Starten af HTML-dokumentet -->
 <MainLayout hasSearch={false}>
+  <!-- Playbox_container med titlen "Spotify-playlister" -->
   <Playbox_container title="Spotify-playlister">
+    <!-- Playbox 1 -->
     <Playbox img="https://i.pinimg.com/564x/00/c6/33/00c633c2c398e9f343af682f086e32f4.jpg" title="Today's Top Hits" text="Jungkook is on top of the hottest 50" />
+    <!-- Playbox 2 -->
     <Playbox img="https://picsum.photos/id/15/350/350.webp" title="RapCaviar" text="New music from Doja Cat, Lil Tecca and Moneybagg Yo" />
+    <!-- Playbox 3 -->
     <Playbox img="https://picsum.photos/id/16/350/350.webp" title="All out 2010's" text="The biggest songs of the 2010s" />
+
+    <!-- Playbox 4 -->
     <Playbox img="https://picsum.photos/id/17/350/350.webp" title="Rock Classics" text="Rock legends & epic songs that continue to inspire generations." />
+    <!-- Playbox 5 -->
     <Playbox img="https://picsum.photos/id/11/350/350.webp" title="Chill Hits" text="Kick back to the best new and recent chill hits" />
   </Playbox_container>
 
+  <!-- Anden Playbox_container med titlen "Focus" -->
   <Playbox_container title="Focus">
+    <!-- Playbox 1 -->
     <Playbox img="https://picsum.photos/id/18/350/350.webp" title="Peaceful Piano" text="Peaceful piano to help you slow down, breathe, and relax" />
+    <!-- Playbox 2 -->
     <Playbox img="https://picsum.photos/id/19/350/350.webp" title="Deep Focus" text="Keep calm and focus with ambient and post-rock music" />
+    <!-- Playbox 3 -->
     <Playbox img="https://picsum.photos/id/20/350/350.webp" title="Instrumental Study" text="Focus with soft study music in the background" />
+    <!-- Playbox 4 -->
     <Playbox img="https://picsum.photos/id/21/350/350.webp" title="Focus Flow" text="Uptempo instrumental hip hop beats" />
     <Playbox img="https://picsum.photos/id/22/350/350.webp" title="Workday Lounge" text="Lounge and chill out music for your workday" />
   </Playbox_container>
 </MainLayout>
 
 <style>
+  /* Globale CSS-stilarter, der styrer layoutet af hele siden */
   body {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -34,6 +53,8 @@ import Playbox from "../components/Playbox.astro";
       "footer footer";
     height: 100%;
   }
+
+  /* Definerer grid-områder for komponenter */
   :global(main) {
     grid-area: main;
   }
@@ -47,6 +68,7 @@ import Playbox from "../components/Playbox.astro";
     grid-area: footer;
   }
 
+  /* Anvender responsivt padding til main-elementet */
   @media (width > 1000px) {
     main {
       padding: 1.5rem 2rem;

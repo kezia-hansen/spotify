@@ -4,32 +4,65 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Card from "../components/Card_category.astro";
 const cardColors = ["#27856A", "#1E3264", "#7358FF", "#E8105B", "#8D67AB"];
 const badgeColors = ["#27856A", "#1E3264", "#7358FF", "#E8105B", "#8D67AB"];
-const { hasSearch } = Astro.props;
-const { newBadge } = Astro.props;
+const { hasSearch, newBadge } = Astro.props;
 ---
 
+<!--
+Importér CSS-stilarket
+Importér MainLayout fra ../layouts/MainLayout.astro
+Importér Card fra ../components
+Definér farver til kort og badges
+Hent prop-værdier fra Astro
+
+Starten af HTML-dokumentet -->
 <MainLayout hasSearch={true} title="Search">
+  <!-- Overskrift for sektionen -->
   <h2>Browse all</h2>
+  <!-- Container til kortene -->
   <div class="card-container">
+    <!-- Kort 1-->
     <Card title="Podcast" img="https://dissectpodcast.com/wp-content/uploads/2020/09/Avatar-Dissect-S7.jpg" color={cardColors[0]} hasNewBadge={false} />
+    <!-- Kort 2-->
     <Card title="Made For You" img="https://i.pinimg.com/564x/00/c6/33/00c633c2c398e9f343af682f086e32f4.jpg" color={cardColors[1]} hasNewBadge={true} color={badgeColors[1]} />
+    <!-- Kort 3-->
     <Card title="Charts" img="https://charts-images.scdn.co/assets/locale_en/regional/weekly/region_global_default.jpg" color={cardColors[2]} hasNewBadge={false} />
+    <!-- Kort 4-->
     <Card title="New Releases" img="https://i.scdn.co/image/ab67706c0000da8412b9ab142f1775de4c536583" color={cardColors[3]} hasNewBadge={true} />
+    <!-- Kort 5-->
     <Card title="Discover" img="https://lineup-images.scdn.co/discocover_DEFAULT.jpg" color={cardColors[4]} hasNewBadge={false} />
+    <!-- Kort 6-->
     <Card title="Live Events" img="https://i.insider.com/5e45b2783b62b778762710a4?width=700" color={cardColors[4]} hasNewBadge={true} />
+    <!-- Kort 7-->
     <Card title="Pop" img="https://i.scdn.co/image/ab67706c0000da8481b02b2a589b6fd6284c1054" color={cardColors[3]} hasNewBadge={false} />
+    <!-- Kort 8-->
     <Card title="Kpop" img="https://i.scdn.co/image/ab67706c0000da843bfde81c50a2828d7c454f2b" color={cardColors[0]} hasNewBadge={false} />
+    <!-- Kort 9-->
     <Card title="Hip-Hop" img="https://i.scdn.co/image/ab67706c0000da8437cbf1e65f922c0626c5e980" color={cardColors[2]} hasNewBadge={false} />
+    <!-- Kort 10-->
     <Card title="Rock" img="https://omniaintellegohome.files.wordpress.com/2019/08/rock.jpg?w=880" color={cardColors[1]} hasNewBadge={false} />
+    <!-- Kort 11-->
     <Card title="R&B" img="https://i.scdn.co/image/ab67706c0000da8443ed2645b02b295aa46e464e" color={cardColors[2]} />
+    <!-- Kort 12-->
     <Card title="Latin" img="https://community.spotify.com/t5/image/serverpage/image-id/109757iE0CD2DE6E2BD1522/image-size/large?v=v2&px=999" color={cardColors[1]} hasNewBadge={false} />
+    <!-- Kort 13-->
     <Card title="Afro" img="https://i.scdn.co/image/ab67706c0000da8465fa01e86a56fcb6b8191c67" color={cardColors[4]} hasNewBadge={false} />
+    <!-- Kort 14-->
     <Card title="Lofi" img="https://i1.sndcdn.com/artworks-FY9Y8s2jys5piX0R-PxXykA-t500x500.jpg" color={cardColors[3]} hasNewBadge={false} />
+    <!-- Kort 15-->
     <Card title="Anime" img="https://i.scdn.co/image/ab67706c0000da847b3f90bbd80ba5dd5538280c" color={cardColors[0]} hasNewBadge={false} />
   </div>
 </MainLayout>
 
 <style>
+  /* Stilarter til kort-containeren */
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    gap: 30px;
+  }
+  /* Globale CSS-stilarter, der styrer layoutet af hele siden */
   body {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -40,6 +73,8 @@ const { newBadge } = Astro.props;
       "footer footer";
     height: 100%;
   }
+
+  /* Definerer grid-områder for komponenter */
   :global(main) {
     grid-area: main;
   }
@@ -53,17 +88,10 @@ const { newBadge } = Astro.props;
     grid-area: footer;
   }
 
+  /* Anvender responsivt padding til main-elementet */
   @media (width > 1000px) {
     main {
       padding: 1.5rem 2rem;
     }
-  }
-
-  .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    position: relative;
-    gap: 30px;
   }
 </style>
