@@ -2,15 +2,22 @@
 import Button from "./Button.astro";
 ---
 
+<!-- Importerer Button-komponenten fra Button.astro-filen ^^^
+
+Footer-sektion -->
 <footer>
   <div class="content">
+    <!-- Overskrift for footer -->
     <p class="footer-title">Preview of Spotify</p>
+    <!-- Beskrivelsestekst for footer -->
     <p>Sign up to get unlimited songs and podcasts with occasional ads. No credit card needed.</p>
   </div>
+  <!-- Beskrivelsestekst for footer -->
   <Button variant="primary" size="medium">Sign up free</Button>
 </footer>
 
 <style>
+  /* Styling for footer-sektionen */
   footer {
     display: flex;
     gap: 1rem;
@@ -22,6 +29,7 @@ import Button from "./Button.astro";
     padding: 11px 24px 7px 15px;
   }
 
+  /* Styling for footer-overskriften */
   .footer-title {
     font-size: 0.75rem;
     text-transform: uppercase;

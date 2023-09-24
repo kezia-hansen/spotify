@@ -2,36 +2,42 @@
 const { title, img, color, hasNewBadge } = Astro.props;
 ---
 
+<!-- Henter nødvendig data fra Astro-props, gør den fleksibel^^
+
+   HTML struktur for et enkelt kort (card) -->
 <li>
   <section class="card">
-    <div class="card-content">
-      <div class="card-content--item category--item" style={{ backgroundColor: color }}>
-        <h3>
-          <a href="#0">{title}</a>
-        </h3>
-        <img src={img} alt="" />
-      </div>
-
-      {
-        hasNewBadge && (
-          <div class="new-badge-container">
-            <div class="new-badge" style={`background-color: ${color};`}>
-              NEW
-            </div>
-          </div>
-        )
-      }
+    <!-- Container for kortets indhold og kategori (category) + baggrundsfarve fra variabelen "color" -->
+    <div class="card-content--item category--item" style={{ backgroundColor: color }}>
+      <h3>
+        <a href="#0">{title}</a>
+      </h3>
+      <img src={img} alt="" />
     </div>
+
+    <!-- Container til "Ny" badge (Conditional) og styling tilføjet via HTML -->
+    <!-- "Ny" badge med baggrundsfarve fra variabelen "color" -->
+    {
+      hasNewBadge && (
+        <div class="new-badge-container">
+          <div class="new-badge" style={`background-color: ${color};`}>
+            NEW
+          </div>
+        </div>
+      )
+    }
   </section>
 </li>
 
 <style>
+  /* Generel styling for kort-containeren */
   .card {
     position: relative;
     width: 200px;
     height: 200px;
   }
 
+  /* Individuelle card content items (Kategori items) */
   .card-content--item {
     position: relative;
     z-index: 1;
@@ -41,6 +47,8 @@ const { title, img, color, hasNewBadge } = Astro.props;
     width: 100%;
     height: 200px;
   }
+
+  /* Styling til links inden i category items (titel) */
   .category--item a {
     display: block;
     height: 100%;
@@ -52,6 +60,7 @@ const { title, img, color, hasNewBadge } = Astro.props;
     padding-left: 16px;
   }
 
+  /* Styling til category item imgs */
   .category--item img {
     position: absolute;
     width: 100px;
@@ -63,6 +72,7 @@ const { title, img, color, hasNewBadge } = Astro.props;
     box-shadow: -1px 3px 2px 0px rgba(0, 0, 0, 0.1);
   }
 
+  /* Container til new badge  - positionering*/
   .new-badge-container {
     position: absolute;
     top: -10px;
@@ -70,15 +80,12 @@ const { title, img, color, hasNewBadge } = Astro.props;
     z-index: 1;
   }
 
+  /* Styling til det new badge */
   .new-badge {
     color: white;
     border-radius: 100px;
     padding: 1px 12px;
     border: 3px solid #1e1e1e;
     font-size: 0.75rem;
-  }
-
-  li {
-    list-style: none;
   }
 </style>

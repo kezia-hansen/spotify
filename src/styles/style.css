@@ -121,3 +121,7 @@ main {
     height: 18px;
     width: 18px;
 }
+
+li {
+    list-style: none;
+}
