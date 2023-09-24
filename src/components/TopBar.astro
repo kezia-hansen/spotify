@@ -3,20 +3,33 @@ import Button from "./Button.astro";
 const { hasSearch } = Astro.props;
 ---
 
+<!-- Import af knapkomponenten fra Button.astro-filen + Hent værdien af hasSearch fra Astro.props
+
+
+  Header-elementet indeholder Topbar på siden -->
 <header class="topbar">
   <menu>
     <li>
       <button disabled>
+        <!-- Venstre-pil-ikon -->
         <svg height="16" width="16" viewBox="0 0 16 16" fill="currentColor"><path d="M11.03.47a.75.75 0 0 1 0 1.06L4.56 8l6.47 6.47a.75.75 0 1 1-1.06 1.06L2.44 8 9.97.47a.75.75 0 0 1 1.06 0z"></path></svg>
       </button>
     </li>
     <li>
       <button disabled>
+        <!-- Højre-pil-ikon -->
         <svg height="16" width="16" viewBox="0 0 16 16" fill="currentColor"><path d="M4.97.47a.75.75 0 0 0 0 1.06L11.44 8l-6.47 6.47a.75.75 0 1 0 1.06 1.06L13.56 8 6.03.47a.75.75 0 0 0-1.06 0z"></path></svg>
       </button>
     </li>
   </menu>
 
+  <!--
+Viser søgefeltet, hvis hasSearch er sandt
+
+Søgeikon
+
+Søgeinputfelt
+-->
   {
     hasSearch && (
       <div class="search">
@@ -27,14 +40,17 @@ const { hasSearch } = Astro.props;
       </div>
     )
   }
-
+  <!-- Knappens gruppe til tilmelding og login -->
   <div class="button-group">
+    <!-- Tilmeldingsknap -->
     <Button variant="tertiary" size="medium">Sign up</Button>
+    <!-- Login-knap -->
     <Button variant="primary" size="medium">Log in</Button>
   </div>
 </header>
 
 <style>
+  /* Topbar styling */
   .topbar {
     display: flex;
     gap: 1rem;
@@ -45,12 +61,14 @@ const { hasSearch } = Astro.props;
     height: 4rem;
   }
 
+  /* Menuen til navigation */
   menu {
     display: flex;
     gap: 1rem;
     list-style: none;
   }
 
+  /* Knapperne i menuen */
   menu button {
     display: grid;
     place-content: center;
@@ -61,24 +79,28 @@ const { hasSearch } = Astro.props;
     color: white;
   }
 
+  /* Ikonstørrelse i knapperne */
   button svg {
     width: 1rem;
     height: 1rem;
   }
 
+  /* Deaktiverede knapper i menuen */
   menu button[disabled] {
     cursor: not-allowed;
     opacity: 0.6;
   }
 
+  /* Knappens gruppes styling */
+  .button-group {
+    flex-shrink: 0;
+    margin-left: auto;
+  }
+
+  /* Responsivitet: Skjuler den sidste menuknap ved skærme mindre end 1000px */
   @media (width < 1000px) {
     menu li:last-child {
       display: none;
     }
-  }
-
-  .button-group {
-    flex-shrink: 0;
-    margin-left: auto;
   }
 </style>

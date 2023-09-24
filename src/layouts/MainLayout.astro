@@ -7,6 +7,17 @@ const { hasSearch } = Astro.props;
 const {newBadge} = Astro.props;
 ---
 
+<!--
+Importér CSS-stilarket
+Importér Nav-komponenten fra ../components/Nav.astro
+Importér TopBar-komponenten fra ../components/TopBar.astro
+Importér Footer-komponenten fra ../components/Footer.astro
+Importér Footer-komponenten fra ../components/Footer.astro
+Hent værdien af hasSearch fra Astro.props
+Hent værdien af newBadge fra Astro.props
+ -->
+
+ <!-- Starten af HTML-dokumentet med de nødvendige metainformationer -->
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -16,11 +27,15 @@ const {newBadge} = Astro.props;
     <title>Home</title>
   </head>
   <body>
+      <!-- Inkluderer Nav-komponenten -->
     <Nav />
+     <!-- Inkluderer TopBar-komponenten og sender hasSearch som en egenskab -->
     <TopBar hasSearch={hasSearch}/>
     <main>
+      <!-- Hovedindholdet inkluderer indhold fra en slot og sender newBadge som en egenskab -->
  <slot newBadge={newBadge}/>
     </main>
+      <!-- Inkluderer Footer-komponenten -->
     <Footer />
   </body>
 </html>
