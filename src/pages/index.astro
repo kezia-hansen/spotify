@@ -42,18 +42,6 @@ Starten af HTML-dokumentet -->
 </MainLayout>
 
 <style>
-  /* Globale CSS-stilarter, der styrer layoutet af hele siden */
-  body {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto 1fr auto;
-    grid-template-areas:
-      "nav topbar"
-      "nav main"
-      "footer footer";
-    height: 100%;
-  }
-
   /* Definerer grid-områder for komponenter */
   :global(main) {
     grid-area: main;
@@ -66,12 +54,5 @@ Starten af HTML-dokumentet -->
   }
   :global(footer) {
     grid-area: footer;
-  }
-
-  /* Anvender responsivt padding til main-elementet */
-  @media (width > 1000px) {
-    main {
-      padding: 1.5rem 2rem;
-    }
   }
 </style>

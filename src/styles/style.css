@@ -1,5 +1,6 @@
+/* Generelle CSS-regler */
 /* ------
-  Resets / normalize
+  Resets / normalize - Nulstil margen, polstring og boksmodel for alle elementer
 ------ */
 * {
     margin: 0;
@@ -7,57 +8,69 @@
     box-sizing: border-box;
 }
 
+/* sætter højde for html-elementet */
 html {
     height: 100%;
-    background: var(--surface-default);
+    background: black;
 }
 
+/* sætter linjehøjde og skrifttype for body-elementet */
 body {
     height: 100%;
     line-height: 1.6;
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Stil for overskrifter (h1, h2, h3) med hvid tekstfarve */
 h1,
 h2,
 h3 {
     color: #fff;
 }
 
+/* Linjehøjde for h1 og h2 */
 h1,
 h2 {
     line-height: 1.5;
 }
 
+/* Skriftstørrelse og fed skrift for h3 */
 h3 {
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 700;
 }
 
+/* Skriftstørrelse for almindelig tekst (p) */
 p {
     font-size: 0.875rem;
 
 }
 
+/* Linkstil for alle links */
 a:where(:any-link) {
     color: #818181;
     text-decoration: none;
 }
 
+/* Linkstil for links inde i h1, h2 og h3 */
 a:where(:is(h1, h2, h3) > *) {
     color: white;
 }
 
-ul[class] {
+/* Fjern punktopstilling for alle lister med en klasseattribut */
+ul,
+li {
     list-style: none;
 }
 
+/* Sæt billedstil til at fylde containeren og have automatisk højde */
 img {
     width: 100%;
     height: auto;
     display: block;
 }
 
+/* Stil for knapper med overført skrifttype og baggrundsfarve */
 button {
     font: inherit;
     background: transparent;
@@ -69,6 +82,19 @@ button {
     transition: scale 33ms ease-in-out;
 }
 
+/* styrer layoutet af hele siden */
+body {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "nav topbar"
+        "nav main"
+        "footer footer";
+    height: 100%;
+}
+
+/* Stil for hovedindhold med gridlayout, baggrundsfarve og scroll */
 main {
     display: grid;
     grid-auto-rows: min-content;
@@ -78,7 +104,16 @@ main {
     padding: 1.5rem 1rem;
 }
 
-/* Search bar styles */
+/* Anvender responsivt padding til main-elementet */
+@media (width > 1000px) {
+    main {
+        padding: 1.5rem 2rem;
+    }
+}
+
+/* Specifikke CSS-regler for søgefeltet */
+
+/* Stil for søgefeltcontainer med positionering og centreret indhold */
 .search {
     position: relative;
     display: flex;
@@ -86,6 +121,7 @@ main {
     max-width: 100%;
 }
 
+/* Stil for søgeinput med baggrundsfarve og overgange */
 .search-input {
     border: none;
     outline: none;
@@ -97,22 +133,25 @@ main {
     padding: 20px 20px 20px 48px;
 }
 
+/* Ændrer søgeinputstil ved hover */
 .search:hover .search-input {
     border: 2px solid #343434;
     background-color: #2A2A2A;
     transition: fill 0.3s;
 }
 
+/* Ændrer søgeinputstil ved fokus */
 .search-input:focus {
     border: 2px solid white;
 }
 
+/* Ændrer søgeikonstil ved hover */
 .search:hover .search-icon {
     fill: white;
     transition: fill 0.3s;
 }
 
-/* Search icon styles */
+/* Stil for søgeikon med position og fyldfarve */
 .search-icon {
     position: absolute;
     top: 50%;
@@ -123,8 +162,4 @@ main {
     transition: fill 0.3s;
     height: 18px;
     width: 18px;
-}
-
-li {
-    list-style: none;
 }

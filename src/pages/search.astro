@@ -62,17 +62,6 @@ Starten af HTML-dokumentet -->
     position: relative;
     gap: 30px;
   }
-  /* Globale CSS-stilarter, der styrer layoutet af hele siden */
-  body {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto 1fr auto;
-    grid-template-areas:
-      "nav topbar"
-      "nav main"
-      "footer footer";
-    height: 100%;
-  }
 
   /* Definerer grid-områder for komponenter */
   :global(main) {
