@@ -2,48 +2,61 @@
 const { title } = Astro.props;
 ---
 
+<!-- Deklaration af en konstant 'title' fra Astro.props ^^^
+
+  Sektionselement med indhold -->
 <section>
   <header>
+    <!-- Overskrift med en hyperlink -->
     <h2>
       <a href="#0">{title}</a>
     </h2>
+    <!-- Hyperlink til 'Show all' -->
     <a href="#">Show all</a>
   </header>
+  <!-- Unummereret liste (ul) med en klasse 'grid-container' -->
   <ul class="grid-container">
+    <!-- Plads til indhold sat via slot -->
     <slot />
   </ul>
 </section>
 
 <style>
+  /* Styling for sektionselementet */
   section {
     display: grid;
     grid-auto-rows: min-content;
     gap: 1rem;
   }
 
+  /* Styling for sektionselementet */
   header {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
   }
 
+  /* Styling for hyperlink i overskriften */
   header > a {
     font-size: 0.875rem;
     font-weight: 500;
   }
 
+  /* Styling for overskriftshyperlinken */
   h2 a {
     color: inherit;
   }
 
+  /* Styling for hyperlink ved hover */
   a:hover {
     text-decoration: underline;
   }
 
+  /* Styling for grid-container */
   .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-    /* hide wrapping rows */
+    /* Skjul ombrydning af rækker */
     grid-template-rows: min-content;
     grid-auto-rows: 0;
     gap: 0 1em;
